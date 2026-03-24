@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  authors_service: 
+    build: ./authors_service
+    ports:
+      - "8000:8000"
+
+  books_service:
+    build: ./books_service
+    ports:
+      - "8001:8000"
+    depends_on:
+      - authors_service
